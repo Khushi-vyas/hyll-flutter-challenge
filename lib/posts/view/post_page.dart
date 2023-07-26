@@ -14,8 +14,9 @@ class PostsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Posts')),
       body: BlocProvider(
-        create: (_) => PostBloc(postRepository: PostRepository(http.Client()))
-          ..add(PostFetched()),
+        create: (_) =>
+            PostBloc(postRepository: AdventureRepository(http.Client()))
+              ..add(PostFetched()),
         child: PostsList(),
       ),
       bottomNavigationBar: BottomNavigationBar(

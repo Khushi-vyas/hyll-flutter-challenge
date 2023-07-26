@@ -27,7 +27,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     );
   }
 
-  final PostRepository postRepository;
+//  final PostRepository postRepository;
+  final AdventureRepository postRepository;
 
   // final http.Client httpClient;
 
@@ -57,7 +58,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
                 hasReachedMax: false,
               ),
             );
-    } catch (_) {
+    } catch (e) {
+      print(e);
       emit(state.copyWith(status: PostStatus.failure));
     }
   }

@@ -10,7 +10,7 @@ class PostListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(post.id);
+    print(post.adventureModel.id);
     final textTheme = Theme.of(context).textTheme;
 
     return Material(
@@ -25,13 +25,13 @@ class PostListItem extends StatelessWidget {
                       storyItems: [
                         StoryItem.text(
                           title:
-                              "${post.id} \n\nHello world!\nStory 1. \n\nTap!",
+                              "${post.adventureModel.id} \n\nHello world!\nStory 1. \n\nTap!",
                           backgroundColor: Colors.orange,
                           roundedTop: true,
                         ),
                         StoryItem.text(
                           title:
-                              "${post.id} \n\nHello world!\nStory 2. \n\nTap!",
+                              "${post.adventureModel.id} \n\nHello world!\nStory 2. \n\nTap!",
                           backgroundColor: Colors.blue,
                           roundedTop: true,
                         ),
@@ -41,10 +41,11 @@ class PostListItem extends StatelessWidget {
                   : Offstage(),
             ),
             ListTile(
-              leading: Text('${post.id}', style: textTheme.bodySmall),
-              title: Text(post.title),
+              leading:
+                  Text('${post.adventureModel.id}', style: textTheme.bodySmall),
+              title: Text("${post.adventureModel.title}"),
               isThreeLine: true,
-              subtitle: Text(post.body),
+              subtitle: Text("${post.adventureModel.primaryDescription}"),
               dense: true,
               shape:
                   RoundedRectangleBorder(side: BorderSide(color: Colors.black)),
